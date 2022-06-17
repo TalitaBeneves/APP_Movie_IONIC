@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Popular Movies</ion-title>
+
+    <ion-avatar slot="end" (click)="changeImage()">
+      <img
+        *ngIf="profile?.imageUrl; else placheolder_avatar"
+        [src]="profile?.imageUrl"
+        alt=""
+        width="28"
+        height="20"
+      />
+      <ng-template #placheolder_avatar>
+        <div class="icon">
+          <ion-icon name="person-outline"></ion-icon>
+        </div>
+      </ng-template>
+    </ion-avatar>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <div class="iconExit">
+          <ion-icon slot="start" name="log-out-outline"></ion-icon>
+        </div>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item button *ngFor="let movie of movies" [routerLink]="[movie.id]">
+      <ion-avatar slot="start">
+        <img [src]="imageBaseUrl + '/w92' + movie.poster_path" alt="" />
+      </ion-avatar>
+
+      <ion-label>
+        {{movie.title}}
+        <p>{{movie.release_date | date: 'y'}}</p>
+      </ion-label>
+      <ion-badge slot="end" color="warning">{{movie.vote_average}}</ion-badge>
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more"
+    ></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
