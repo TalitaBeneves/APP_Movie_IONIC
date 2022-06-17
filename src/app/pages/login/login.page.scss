@@ -1,0 +1,35 @@
+ion-content {
+  --background: url("../../../assets/img/batman.png") no-repeat center/cover;
+  ion-header {
+    ion-toolbar {
+      --background: transparent;
+    }
+  }
+}
+
+ion-footer {
+  ion-list {
+    border-radius: 20px 20px 0 0;
+
+    ion-list-header {
+      ion-label {
+        font-weight: bold;
+        font-size: 1.5em;
+      }
+    }
+
+    ion-input {
+      font-size: 0.9em;
+    }
+
+    .errors {
+      font-size: 0.75em;
+    }
+  }
+
+  ion-button {
+    margin: 4vh 0;
+    font-size: 1em;
+    font-weight: 600;
+  }
+}
