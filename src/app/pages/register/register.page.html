@@ -1,0 +1,60 @@
+<ion-content [fullscreen]="true">
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-title>Cadastro</ion-title>
+
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"> </ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+
+<ion-footer class="animate__animated animate__fadeInUpBig">
+  <ion-list lines="full">
+    <ion-list-header class="ion-margin">
+      <ion-label> Faça seu Cadastro </ion-label>
+    </ion-list-header>
+
+    <ion-item-group class="ion-margin-horizontal">
+      <form [formGroup]="form" (ngSubmit)="register()">
+        <div class="ion-margin-vertical">
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-note
+            class="errors"
+            color="danger"
+            slot="error"
+            *ngIf="(email.dirty || email.touched) && email.errors"
+            >*Email está invalido</ion-note
+          >
+        </div>
+
+        <div class="ion-margin-vertical">
+          <ion-item fill="solid" class="ion-margin-bottom">
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-note
+            class="errors"
+            color="danger"
+            slot="error"
+            *ngIf="(password.dirty || password.touched) && password.errors"
+            >*Senha precisa conter no minimo 6 caracteres</ion-note
+          >
+        </div>
+
+        <ion-button
+          size="large"
+          shape="round"
+          color="tertiary"
+          expand="block"
+          type="submit"
+          >Cadastro</ion-button
+        >
+      </form>
+    </ion-item-group>
+  </ion-list>
+</ion-footer>
