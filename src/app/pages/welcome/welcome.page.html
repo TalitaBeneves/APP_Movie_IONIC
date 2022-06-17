@@ -1,0 +1,31 @@
+<ion-content [fullscreen]="true">
+  <ion-slides
+    #slides
+    (ionSlidesDidLoad)="slidesDidLoad(slides)"
+    [options]="slideOpts"
+  >
+    <ion-slide
+      *ngFor="let slide of slideImages"
+      [style.background-image]="'url(' + slide + ')'"
+    >
+      <ion-grid>
+        <div class="authButton">
+          <ion-button
+            color="warning"
+            expand="block"
+            shape="round"
+            routerLink="/login"
+            >Login</ion-button
+          >
+          <ion-button
+            expand="block"
+            color="tertiary"
+            shape="round"
+            routerLink="/register"
+            >Cadastrar</ion-button
+          >
+        </div>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

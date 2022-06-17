@@ -1,0 +1,21 @@
+
+
+ion-slides {
+  height: 100%;
+  flex-direction: column;
+
+  ion-slide {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .authButton {
+      transform: translateY(23vh);
+      ion-button {
+        width: 70%;
+        margin: auto;
+        margin-bottom: 2vh;
+      }
+    }
+  }
+}
