@@ -1,0 +1,30 @@
+<ion-menu side="end" content-id="main-content">
+  <ion-content>
+    <ion-list>
+      <ion-item lines="none">
+        <app-perfil></app-perfil>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-icon slot="start" name="globe-outline"></ion-icon>
+        <ion-select
+          ok-text="Okay"
+          cancel-text="Nah"
+          (ionChange)="change($event)"
+        >
+          <ion-select-option value="pt">Português</ion-select-option>
+          <ion-select-option value="en">Englês</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon slot="start" name="reader-outline"></ion-icon>
+        <ion-label (click)="notes()"> Notas </ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon slot="start" name="log-out-outline"></ion-icon>
+        <ion-label (click)="logout()"> Sair </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
