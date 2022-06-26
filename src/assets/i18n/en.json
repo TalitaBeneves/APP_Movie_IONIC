@@ -1,0 +1,20 @@
+{
+  "MENU": {
+    "option": "Notes",
+    "option2": "Go out"
+  },
+
+  "WELCOME": {
+    "login": "Login",
+    "cadastrar": "Register",
+    "title": "Welcome",
+    "redirect": "Ainda não tem cadastro?",
+    "login-senha": "password",
+    "cadastrar-senha": "password"
+  },
+
+  "HOME": {
+    "title": "Popular Movies",
+    "button-homepage": "Open home page"
+  }
+}
