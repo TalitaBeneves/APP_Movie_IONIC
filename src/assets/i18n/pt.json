@@ -1,20 +1,30 @@
 {
   "MENU": {
-    "option": "Notas",
-    "option2": "Sair"
+    "option": "Mudar Idioma",
+    "option2": "Notas",
+    "option3": "Sair"
   },
 
   "WELCOME": {
     "login": "Logar",
     "cadastrar": "Cadastrar",
+    "cadastrar-title": "Faça seu Cadastro",
     "title": "Bem Vindo(a)",
     "redirect": "Ainda não tem cadastro?",
     "login-senha": "Senha",
-    "cadastrar-senha": "Senha"
+    "cadastrar-senha": "Senha",
+    "cadastrar-btn": "Cadastro",
+    "senha-error": "*Senha precisa conter no mínimo 6 caracteres",
+    "email-error": "*E-mail está invalido"
   },
 
   "HOME": {
     "title": "Filmes populares",
     "button-homepage": "Abrir página inicial"
+  },
+  "NOTAS": {
+    "title": "Notas",
+    "button-salvar": "Salvar",
+    "button-deletar": "Deletar"
   }
 }

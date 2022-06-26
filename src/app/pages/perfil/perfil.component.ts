@@ -35,7 +35,7 @@ export class PerfilComponent implements OnInit {
       this.avatarService.getUserProfile().subscribe((data) => {
         this.profile = data;
       });
-    }, 2000);
+    }, 3000);
   }
 
   async changeImage() {

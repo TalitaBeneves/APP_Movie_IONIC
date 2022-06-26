@@ -1,6 +1,6 @@
 import { LanguageService } from './../../services/language/language.service';
 import { AvatarService } from 'src/app/services/avatar/avatar.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { MovieService } from 'src/app/services/movie/movie.service';
@@ -13,7 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
-  isAuth: boolean = true;
+  @Input() isAuth: boolean = true;
   language = [];
   selected: any;
 
@@ -30,7 +30,7 @@ export class MenuComponent implements OnInit {
 
   async logout() {
     await this.authService.logout();
-    this.isAuth = false;
+    // this.isAuth = false;
     this.router.navigateByUrl('/', { replaceUrl: true });
   }
 

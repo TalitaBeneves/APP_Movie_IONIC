@@ -1,44 +1,45 @@
-<ion-menu side="end" content-id="main-content" *ngIf="isAuth">
+<ion-menu side="end" content-id="main-content">
   <ion-content>
     <ion-list>
       <ion-item lines="none">
         <app-perfil></app-perfil>
       </ion-item>
-      <!-- <ion-item lines="none">
-        <ion-icon slot="start" name="globe-outline"></ion-icon>
-        <ion-select
-          ok-text="Okay"
-          cancel-text="Nah"
-          (ionChange)="change($event)"
-        >
-          <ion-select-option button *ngFor="let lng of language">{{lng.text}}</ion-select-option>
-        </ion-select>
-      </ion-item> -->
 
-      <ion-item
-        button
-        *ngFor="let lng of language"
-        (click)="select(lng.value)"
-        detail="false"
-      >
-        <ion-label text-wrap>
-          {{ lng.text }}
-        </ion-label>
-        <ion-icon
-          *ngIf="lng.value == selected"
-          slot="end"
-          name="checkmark-circle-outline"
-        ></ion-icon>
-      </ion-item>
+      <ion-accordion-group class="margin">
+        <ion-accordion value="first">
+          <ion-item slot="header">
+            <ion-icon slot="start" name="globe-outline"></ion-icon>
+            <ion-label> {{ "MENU.option" | translate }}</ion-label>
+          </ion-item>
+          <div
+            class="text"
+            button
+            *ngFor="let lng of language"
+            (click)="select(lng.value)"
+            slot="content"
+          >
+            {{ lng.text }}
+            <ion-icon
+              *ngIf="lng.value == selected"
+              slot="end"
+              name="checkmark-circle-outline"
+            ></ion-icon>
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
 
       <ion-item lines="none">
         <ion-icon slot="start" name="reader-outline"></ion-icon>
-        <ion-label (click)="notes()"> {{'MENU.option' | translate}} </ion-label>
+        <ion-label (click)="notes()">
+          {{ "MENU.option2" | translate }}
+        </ion-label>
       </ion-item>
 
       <ion-item lines="none">
         <ion-icon slot="start" name="log-out-outline"></ion-icon>
-        <ion-label (click)="logout()"> {{'MENU.option2' | translate}}  </ion-label>
+        <ion-label (click)="logout()">
+          {{ "MENU.option3" | translate }}
+        </ion-label>
       </ion-item>
     </ion-list>
   </ion-content>

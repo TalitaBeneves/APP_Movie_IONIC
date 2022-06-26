@@ -1,6 +1,5 @@
 ion-menu {
-  ion-content{
-
+  ion-content {
     font-size: 70px;
     .perfil {
       display: flex;
@@ -8,5 +7,16 @@ ion-menu {
       align-items: center;
       font-size: 7rem;
     }
+
+    .text {
+      font-size: 20px;
+      padding: 10px;
+    }
+
+    .margin {
+      margin-top: 5%;
+    }
   }
+
+
 }

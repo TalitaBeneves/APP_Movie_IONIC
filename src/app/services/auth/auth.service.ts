@@ -5,13 +5,17 @@ import {
   signInWithEmailAndPassword,
 } from '@angular/fire/auth';
 import { signOut } from '@firebase/auth';
-import { AlertController } from '@ionic/angular';
+import { AlertController, MenuController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private auth: Auth, private alertController: AlertController) {}
+  constructor(
+    private auth: Auth,
+    private alertController: AlertController,
+
+  ) {}
 
   async register({ email, password }) {
     try {
@@ -36,7 +40,7 @@ export class AuthService {
   }
 
   logout() {
-    
+
     return signOut(this.auth);
   }
 

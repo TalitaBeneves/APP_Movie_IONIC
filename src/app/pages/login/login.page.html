@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true">
   <ion-header class="ion-no-border">
     <ion-toolbar>
-      <ion-title>login</ion-title>
+      <ion-title>{{'WELCOME.login' | translate}}</ion-title>
 
       <ion-buttons slot="start">
         <ion-back-button defaultHref="/"> </ion-back-button>
@@ -13,14 +13,14 @@
 <ion-footer class="animate__animated animate__fadeInUpBig">
   <ion-list lines="full">
     <ion-list-header class="ion-margin">
-      <ion-label> Bem Vindo(a) </ion-label>
+      <ion-label>{{'WELCOME.title' | translate}}</ion-label>
     </ion-list-header>
 
     <ion-item-group class="ion-margin-horizontal">
       <form [formGroup]="form" (ngSubmit)="login()">
         <div class="ion-margin-vertical">
           <ion-item>
-            <ion-label position="floating">Email</ion-label>
+            <ion-label position="floating">E-mail</ion-label>
             <ion-input type="email" formControlName="email"></ion-input>
           </ion-item>
           <ion-note
@@ -28,13 +28,15 @@
             color="danger"
             slot="error"
             *ngIf="(email.dirty || email.touched) && email.errors"
-            >*Email está invalido</ion-note
+            >{{'WELCOME.email-error' | translate}}</ion-note
           >
         </div>
 
         <div class="ion-margin-vertical">
           <ion-item fill="solid" class="ion-margin-bottom">
-            <ion-label position="floating">Senha</ion-label>
+            <ion-label position="floating"
+              >{{'WELCOME.login-senha' | translate}}</ion-label
+            >
             <ion-input type="password" formControlName="password"></ion-input>
           </ion-item>
           <ion-note
@@ -42,12 +44,12 @@
             color="danger"
             slot="error"
             *ngIf="(password.dirty || password.touched) && password.errors"
-            >*Senha precisa conter no minimo 6 caracteres</ion-note
+            >{{'WELCOME.senha-error' | translate}}</ion-note
           >
         </div>
         <p class="ion-text-right">
           <ion-text color="danger" routerLink="/register"
-            >Ainda não tem cadastro?</ion-text
+            >{{'WELCOME.redirect' | translate}}</ion-text
           >
         </p>
 
@@ -57,7 +59,7 @@
           color="warning"
           expand="block"
           type="submit"
-          >Login</ion-button
+          >{{'WELCOME.login' | translate}}</ion-button
         >
       </form>
     </ion-item-group>

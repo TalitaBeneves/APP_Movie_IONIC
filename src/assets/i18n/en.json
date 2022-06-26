@@ -1,20 +1,31 @@
 {
   "MENU": {
-    "option": "Notes",
-    "option2": "Go out"
+    "option": "Change language",
+    "option2": "Notes",
+    "option3": "Go out"
   },
 
   "WELCOME": {
     "login": "Login",
+    "cadastrar-title": "Register",
     "cadastrar": "Register",
     "title": "Welcome",
-    "redirect": "Ainda não tem cadastro?",
-    "login-senha": "password",
-    "cadastrar-senha": "password"
+    "redirect": "Don't have a registration yet?",
+    "login-senha": "Password",
+    "cadastrar-senha": "Password",
+    "cadastrar-btn": "Register",
+    "senha-error": "*Password must contain at least 6 characters",
+    "email-error": "*Email is invalid"
   },
 
   "HOME": {
     "title": "Popular Movies",
     "button-homepage": "Open home page"
+  },
+
+  "NOTAS": {
+    "title": "Notes",
+    "button-salvar": "Save",
+    "button-deletar": "Delete"
   }
 }

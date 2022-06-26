@@ -31,8 +31,8 @@
       class="buttons"
       (click)="updateNote()"
     >
-      <ion-label>Salvar</ion-label>
-      <ion-icon name="save" slot="start">Update</ion-icon>
+      <ion-label>{{ "NOTAS.button-salvar" | translate }}</ion-label>
+      <ion-icon name="save" slot="start"></ion-icon>
     </ion-button>
     <ion-button
       expand="block"
@@ -41,8 +41,8 @@
       color="danger"
       (click)="deleteNote()"
     >
-      <ion-icon name="trash-outline">Delete</ion-icon>
-      <ion-label>Deletar</ion-label>
+      <ion-icon name="trash-outline"></ion-icon>
+      <ion-label> {{ "NOTAS.button-deletar" | translate }}</ion-label>
     </ion-button>
   </ion-content>
 </ion-app>

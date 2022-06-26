@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true">
   <ion-header class="ion-no-border">
     <ion-toolbar>
-      <ion-title>Cadastro</ion-title>
+      <ion-title>{{'WELCOME.cadastrar' | translate}}</ion-title>
 
       <ion-buttons slot="start">
         <ion-back-button defaultHref="/"> </ion-back-button>
@@ -13,14 +13,14 @@
 <ion-footer class="animate__animated animate__fadeInUpBig">
   <ion-list lines="full">
     <ion-list-header class="ion-margin">
-      <ion-label> Faça seu Cadastro </ion-label>
+      <ion-label>{{'WELCOME.cadastrar-title' | translate}}</ion-label>
     </ion-list-header>
 
     <ion-item-group class="ion-margin-horizontal">
       <form [formGroup]="form" (ngSubmit)="register()">
         <div class="ion-margin-vertical">
           <ion-item>
-            <ion-label position="floating">Email</ion-label>
+            <ion-label position="floating">E-mail</ion-label>
             <ion-input type="email" formControlName="email"></ion-input>
           </ion-item>
           <ion-note
@@ -28,13 +28,15 @@
             color="danger"
             slot="error"
             *ngIf="(email.dirty || email.touched) && email.errors"
-            >*Email está invalido</ion-note
+            >{{'WELCOME.email-error' | translate}}</ion-note
           >
         </div>
 
         <div class="ion-margin-vertical">
           <ion-item fill="solid" class="ion-margin-bottom">
-            <ion-label position="floating">Senha</ion-label>
+            <ion-label position="floating"
+              >{{'WELCOME.cadastrar-senha' | translate}}</ion-label
+            >
             <ion-input type="password" formControlName="password"></ion-input>
           </ion-item>
           <ion-note
@@ -42,7 +44,7 @@
             color="danger"
             slot="error"
             *ngIf="(password.dirty || password.touched) && password.errors"
-            >*Senha precisa conter no minimo 6 caracteres</ion-note
+            >{{'WELCOME.senha-error' | translate}}</ion-note
           >
         </div>
 
@@ -52,7 +54,7 @@
           color="tertiary"
           expand="block"
           type="submit"
-          >Cadastro</ion-button
+          >{{'WELCOME.cadastrar-btn' | translate}}</ion-button
         >
       </form>
     </ion-item-group>
