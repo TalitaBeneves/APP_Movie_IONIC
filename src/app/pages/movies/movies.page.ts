@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {
   AlertController,
   InfiniteScrollCustomEvent,
@@ -21,20 +21,12 @@ export class MoviesPage implements OnInit {
   movies = [];
   currentPage = 1;
   imageBaseUrl = environment.images;
-  profile = null;
 
   constructor(
     private serviceMovie: MovieService,
     private loadingCtrl: LoadingController,
-    private router: Router,
-    private authService: AuthService,
-    private avatarService: AvatarService,
-    private alertController: AlertController
-  ) {
-    this.avatarService.getUserProfile().subscribe((data) => {
-      this.profile = data;
-    });
-  }
+  
+  ) {}
 
   ngOnInit() {
     this.moviesPopular();
@@ -68,35 +60,5 @@ export class MoviesPage implements OnInit {
     this.moviesPopular(event);
   }
 
-  async logout() {
-    await this.authService.logout();
-    this.router.navigateByUrl('/', { replaceUrl: true });
-  }
 
-  async changeImage() {
-    const image = await Camera.getPhoto({
-      quality: 100,
-      allowEditing: false,
-      resultType: CameraResultType.Base64,
-      source: CameraSource.Photos,
-    });
-
-    if (image) {
-      const loading = await this.loadingCtrl.create();
-      await loading.present();
-
-      const res = await this.avatarService.uploadImage(image);
-      loading.dismiss();
-
-      if (!res) {
-        const alert = await this.alertController.create({
-          header: 'Upload Falhou',
-          message: 'Houve um problema ao fazer o uploading do seu avatar',
-          buttons: ['OK'],
-        });
-
-        await alert.present();
-      }
-    }
-  }
 }

@@ -2,28 +2,11 @@
   <ion-toolbar>
     <ion-title>Popular Movies</ion-title>
 
-    <ion-avatar slot="end" (click)="changeImage()">
-      <img
-        *ngIf="profile?.imageUrl; else placheolder_avatar"
-        [src]="profile?.imageUrl"
-        alt=""
-        width="28"
-        height="20"
-      />
-      <ng-template #placheolder_avatar>
-        <div class="icon">
-          <ion-icon name="person-outline"></ion-icon>
-        </div>
-      </ng-template>
-    </ion-avatar>
-
-    <ion-buttons slot="end">
-      <ion-button (click)="logout()">
-        <div class="iconExit">
-          <ion-icon slot="start" name="log-out-outline"></ion-icon>
-        </div>
-      </ion-button>
-    </ion-buttons>
+    <ion-menu-button
+      slot="end"
+      color="warning"
+      id="main-content"
+    ></ion-menu-button>
   </ion-toolbar>
 </ion-header>
 

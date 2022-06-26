@@ -43,6 +43,17 @@ const routes: Routes = [
         (m) => m.MovieDetailsPageModule
       ),
   },
+  {
+    path: 'notes',
+    loadChildren: () =>
+      import('./pages/notes/notes.module').then(
+        (m) => m.NotesModule
+      ),
+  },
+  {
+    path: 'modal',
+    loadChildren: () => import('./pages/modal/modal.module').then( m => m.ModalModule)
+  },
 ];
 
 @NgModule({

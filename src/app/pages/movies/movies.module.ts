@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MenuPageModule } from './../menu/menu.module';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,8 +14,9 @@ import { MoviesPage } from './movies.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    MoviesPageRoutingModule
+    MoviesPageRoutingModule,
+    MenuPageModule,
   ],
-  declarations: [MoviesPage]
+  declarations: [MoviesPage],
 })
 export class MoviesPageModule {}
