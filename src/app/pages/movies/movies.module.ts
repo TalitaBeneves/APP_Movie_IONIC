@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { MoviesPageRoutingModule } from './movies-routing.module';
 
 import { MoviesPage } from './movies.page';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { MoviesPage } from './movies.page';
     IonicModule,
     MoviesPageRoutingModule,
     MenuPageModule,
+    TranslateModule,
   ],
   declarations: [MoviesPage],
 })

@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 import { PerfilPageModule } from '../perfil/perfil.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { PerfilPageModule } from '../perfil/perfil.module';
     IonicModule,
     ReactiveFormsModule,
     PerfilPageModule,
+    TranslateModule,
   ],
   declarations: [MenuComponent],
   exports: [MenuComponent],

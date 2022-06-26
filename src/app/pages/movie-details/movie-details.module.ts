@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { MovieDetailsPageRoutingModule } from './movie-details-routing.module';
 
 import { MovieDetailsPage } from './movie-details.page';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MovieDetailsPageRoutingModule
+    MovieDetailsPageRoutingModule,
+    TranslateModule,
   ],
-  declarations: [MovieDetailsPage]
+  declarations: [MovieDetailsPage],
 })
 export class MovieDetailsPageModule {}

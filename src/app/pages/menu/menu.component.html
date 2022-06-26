@@ -4,26 +4,41 @@
       <ion-item lines="none">
         <app-perfil></app-perfil>
       </ion-item>
-      <ion-item lines="none">
+      <!-- <ion-item lines="none">
         <ion-icon slot="start" name="globe-outline"></ion-icon>
         <ion-select
           ok-text="Okay"
           cancel-text="Nah"
           (ionChange)="change($event)"
         >
-          <ion-select-option value="pt">Português</ion-select-option>
-          <ion-select-option value="en">Englês</ion-select-option>
+          <ion-select-option button *ngFor="let lng of language">{{lng.text}}</ion-select-option>
         </ion-select>
+      </ion-item> -->
+
+      <ion-item
+        button
+        *ngFor="let lng of language"
+        (click)="select(lng.value)"
+        detail="false"
+      >
+        <ion-label text-wrap>
+          {{ lng.text }}
+        </ion-label>
+        <ion-icon
+          *ngIf="lng.value == selected"
+          slot="end"
+          name="checkmark-circle-outline"
+        ></ion-icon>
       </ion-item>
 
-      <ion-item lines="none" routerLink="/notes">
+      <ion-item lines="none">
         <ion-icon slot="start" name="reader-outline"></ion-icon>
-        <ion-label (click)="notes()"> Notas </ion-label>
+        <ion-label (click)="notes()"> {{'MENU.option' | translate}} </ion-label>
       </ion-item>
 
       <ion-item lines="none">
         <ion-icon slot="start" name="log-out-outline"></ion-icon>
-        <ion-label (click)="logout()"> Sair </ion-label>
+        <ion-label (click)="logout()"> {{'MENU.option2' | translate}}  </ion-label>
       </ion-item>
     </ion-list>
   </ion-content>
