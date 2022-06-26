@@ -1,4 +1,4 @@
-<ion-menu side="end" content-id="main-content">
+<ion-menu side="end" content-id="main-content" *ngIf="isAuth">
   <ion-content>
     <ion-list>
       <ion-item lines="none">
@@ -16,7 +16,7 @@
         </ion-select>
       </ion-item>
 
-      <ion-item lines="none">
+      <ion-item lines="none" routerLink="/notes">
         <ion-icon slot="start" name="reader-outline"></ion-icon>
         <ion-label (click)="notes()"> Notas </ion-label>
       </ion-item>

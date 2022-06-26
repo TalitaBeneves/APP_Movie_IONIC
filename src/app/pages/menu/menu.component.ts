@@ -1,6 +1,9 @@
+import { AvatarService } from 'src/app/services/avatar/avatar.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { MovieService } from 'src/app/services/movie/movie.service';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-menu',
@@ -9,8 +12,14 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class MenuComponent implements OnInit {
   lang: any;
+  isAuth: boolean = true;
 
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private serviceAvatar: AvatarService,
+    private menu: MenuController
+  ) {}
 
   ngOnInit() {
     this.lang = localStorage.getItem('lang') || 'pt';
@@ -18,6 +27,7 @@ export class MenuComponent implements OnInit {
 
   async logout() {
     await this.authService.logout();
+    this.isAuth = false;
     this.router.navigateByUrl('/', { replaceUrl: true });
   }
 
@@ -26,7 +36,7 @@ export class MenuComponent implements OnInit {
     window.location.reload();
   }
 
-  notes(){
-    this.router.navigate(['/notes'])
+  notes() {
+    this.router.navigate(['/notes']);
   }
 }

@@ -1,5 +1,6 @@
 import {
   AlertController,
+  MenuController,
   ModalController,
   ToastController,
 } from '@ionic/angular';
@@ -22,7 +23,8 @@ export class NotesComponent implements OnInit {
     private service: MovieService,
     private alertCtr: AlertController,
     private modalCtr: ModalController,
-    private toast: ToastController
+    private toast: ToastController,
+    private menu: MenuController
   ) {
     this.service.getNotes().subscribe({
       next: (res) => {
@@ -34,7 +36,7 @@ export class NotesComponent implements OnInit {
 
   ngOnInit() {
     this.getDate();
-    // this.m
+    this.menu.close()
   }
 
   async openNote(note) {
