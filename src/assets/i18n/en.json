@@ -7,15 +7,21 @@
 
   "WELCOME": {
     "login": "Login",
-    "cadastrar-title": "Register",
     "cadastrar": "Register",
-    "title": "Welcome",
-    "redirect": "Don't have a registration yet?",
-    "login-senha": "Password",
-    "cadastrar-senha": "Password",
-    "cadastrar-btn": "Register",
     "senha-error": "*Password must contain at least 6 characters",
     "email-error": "*Email is invalid"
+  },
+
+  "CADASTRO": {
+    "title": "Register",
+    "cadastrar-senha": "Password",
+    "cadastrar-btn": "Register"
+  },
+
+  "LOGIN": {
+    "title": "Welcome",
+    "redirect": "Don't have a registration yet?",
+    "login-senha": "Password"
   },
 
   "HOME": {
