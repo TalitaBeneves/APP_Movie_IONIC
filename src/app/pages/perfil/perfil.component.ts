@@ -17,7 +17,7 @@ import { MovieService } from 'src/app/services/movie/movie.service';
   templateUrl: './perfil.component.html',
   styleUrls: ['./perfil.component.scss'],
 })
-export class PerfilComponent implements OnInit {
+export class PerfilComponent {
   imageBaseUrl = environment.images;
   profile: any;
 
@@ -34,6 +34,7 @@ export class PerfilComponent implements OnInit {
     const time = setTimeout(() => {
       this.avatarService.getUserProfile().subscribe((data) => {
         this.profile = data;
+        console.log(data)
       });
     }, 3000);
   }
@@ -65,5 +66,4 @@ export class PerfilComponent implements OnInit {
     }
   }
 
-  ngOnInit() {}
 }

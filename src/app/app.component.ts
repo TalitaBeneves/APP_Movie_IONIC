@@ -10,6 +10,17 @@ export class AppComponent implements OnInit {
   constructor(private languageService: LanguageService) {}
 
   ngOnInit(): void {
-   this.languageService.setInitialAppLanguage();
+    this.languageService.setInitialAppLanguage();
+   
+  }
+
+  tre() {
+    // document.getElementById('item-native').style.backgroundColor = 'green';
+    // var element = document.querySelectorAll<HTMLElement>('item-native');
+    // element.style.backgroundColor = '#900';
+
+
+
+    // const test = document.querySelectorAll<HTMLElement>('.item-native');
   }
 }

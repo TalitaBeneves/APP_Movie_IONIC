@@ -4,3 +4,4 @@ export interface MoviesModel {
   total_pages: number;
   total_results: number;
 }
+

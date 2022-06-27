@@ -1,13 +1,25 @@
 <ion-menu side="end" content-id="main-content">
   <ion-content>
     <ion-list>
-      <ion-item lines="none">
-        <app-perfil></app-perfil>
+      <ion-item class="container" lines="none" (click)="uploadBackgroundImg()">
+        <img
+          *ngIf="profile?.backgroundUrl; else placheolder_avatar"
+          [src]="profile?.backgroundUrl"
+        />
+        <ng-template #placheolder_avatar class="container2">
+          <img
+            src="https://img.freepik.com/fotos-gratis/figura-triangular-geometrica-legal-em-uma-luz-de-laser-neon-otima-para-fundos-e-papeis-de-parede_181624-9331.jpg?w=2000"
+            alt=""
+          />
+        </ng-template>
+        <div class="sobreP">
+          <app-perfil></app-perfil>
+        </div>
       </ion-item>
 
-      <ion-accordion-group class="margin">
+      <ion-accordion-group>
         <ion-accordion value="first">
-          <ion-item slot="header">
+          <ion-item slot="header" class="padding">
             <ion-icon slot="start" name="globe-outline"></ion-icon>
             <ion-label> {{ "MENU.option" | translate }}</ion-label>
           </ion-item>
@@ -28,14 +40,14 @@
         </ion-accordion>
       </ion-accordion-group>
 
-      <ion-item lines="none">
+      <ion-item lines="none" class="padding">
         <ion-icon slot="start" name="reader-outline"></ion-icon>
         <ion-label (click)="notes()">
           {{ "MENU.option2" | translate }}
         </ion-label>
       </ion-item>
 
-      <ion-item lines="none">
+      <ion-item lines="none" class="padding">
         <ion-icon slot="start" name="log-out-outline"></ion-icon>
         <ion-label (click)="logout()">
           {{ "MENU.option3" | translate }}

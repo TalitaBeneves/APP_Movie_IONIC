@@ -47,3 +47,15 @@
 .alert {
   background-color: transparent !important;
 }
+
+ion-item {
+  --background: transparent;
+  --padding: 0px;
+}
+.list-md {
+  padding-top: 0px;
+}
+.item-inner{
+  padding:0 !important;
+  }
+

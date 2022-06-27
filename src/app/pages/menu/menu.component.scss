@@ -13,10 +13,44 @@ ion-menu {
       padding: 10px;
     }
 
-    .margin {
-      margin-top: 5%;
+    .container {
+      position: relative;
+      width: 120%;
+      height: 15vh;
+    }
+
+    .container img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .container2 {
+      position: relative;
+      width: 120%;
+      height: 13vh;
+    }
+
+    .container2 img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .sobreP {
+      position: absolute;
+      top: 25px;
+      bottom: 0;
+      left: 5px;
+    }
+
+    ion-item::part(native) {
+      padding-left: unset;
+    }
+
+    .padding {
+      padding-left: 20px;
+      background-color: rgb(30, 30, 30);
     }
   }
-
-
 }
